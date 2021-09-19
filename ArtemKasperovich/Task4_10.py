@@ -4,8 +4,8 @@
 
 def generate_squares(number):
     """
-    Функция которая принимает число в качестве аргумента и возвращает словарь,
-    где ключом является число, а значением-квадрат этого числа.
+    A function that takes a number as an argument and returns a dictionary,
+    where the key is a number, and the value is the square of this number.
     """
     return {key: key ** 2 for key in range(1, number + 1)}
 

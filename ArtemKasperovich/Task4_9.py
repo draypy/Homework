@@ -38,11 +38,7 @@ def test_3(strings):
     """
     Returns the letters that are at least in two lines
     """
-    result = []
     characters = search(strings)
-    for key, value in characters.items():
-        if value > 2:
-            result.append(key)
     return [key for key, value in characters.items() if value > 2]
 
 

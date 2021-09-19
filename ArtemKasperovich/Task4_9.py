@@ -21,24 +21,17 @@ def test_1(strings):
     """
     Returns the letters that are in each line
     """
-    result = []
     characters = search(strings)
-    for key, value in characters.items():
-        if value == len(strings):
-            result.append(key)
-    return result
+    return [key for key, value in characters.items() if value == len(strings)]
+
 
 
 def test_2(strings):
     """
     Returns the letters that are at least in one line
     """
-    result = []
     characters = search(strings)
-    for key, value in characters.items():
-        if value > 1:
-            result.append(key)
-    return result
+    return [key for key, value in characters.items() if value > 1]
 
 
 def test_3(strings):
@@ -50,7 +43,7 @@ def test_3(strings):
     for key, value in characters.items():
         if value > 2:
             result.append(key)
-    return result
+    return [key for key, value in characters.items() if value > 2]
 
 
 def test_4(strings):
@@ -58,13 +51,8 @@ def test_4(strings):
     Returns the letters,that were not used in any string
     """
     from string import ascii_lowercase as alphabet
-    result = []
     characters = search(strings)
-
-    for letter in alphabet:
-        if letter not in characters.keys():
-            result.append(letter)
-    return result
+    return [letter for letter in alphabet if letter not in characters.keys()]
 
 
 if __name__ == "__main__":

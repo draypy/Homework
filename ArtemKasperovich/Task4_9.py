@@ -5,6 +5,8 @@
 # characters that appear at least in two strings
 # characters of alphabet, that were not used in any string
 # Note: use string.ascii_lowercase for list of alphabet letters
+from string import ascii_lowercase as alphabet
+
 
 def search(strings):
     """
@@ -23,7 +25,6 @@ def test_1(strings):
     """
     characters = search(strings)
     return [key for key, value in characters.items() if value == len(strings)]
-
 
 
 def test_2(strings):
@@ -46,7 +47,6 @@ def test_4(strings):
     """
     Returns the letters,that were not used in any string
     """
-    from string import ascii_lowercase as alphabet
     characters = search(strings)
     return [letter for letter in alphabet if letter not in characters.keys()]
 

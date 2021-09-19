@@ -1,7 +1,7 @@
 # Task 4.5
 # Implement a function get_digits(num: int) ->
 # -> Tuple[int] which returns a tuple of a given integer's digits. Example:
-def split_by_index(num: int):
+def get_digit(num: int):
     """
     This function converts the number num to a tuple of integers
     """
@@ -9,4 +9,4 @@ def split_by_index(num: int):
 
 
 if __name__ == "__main__":
-    print(split_by_index(87178291199))
+    print(get_digit(87178291199))

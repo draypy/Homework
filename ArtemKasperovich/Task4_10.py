@@ -2,7 +2,7 @@
 # Implement a function that takes a number as an argument and returns a dictionary,
 # where the key is a number and the value is the square of that number.
 
-def generate_squares(number):
+def generate_squares(number: int):
     """
     A function that takes a number as an argument and returns a dictionary,
     where the key is a number, and the value is the square of this number.

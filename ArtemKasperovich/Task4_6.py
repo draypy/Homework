@@ -9,14 +9,16 @@ def get_shortest_word(string):
     variable_string = ""
     result = []
     for symbol in string:
-        if symbol.isalpha():
+        if not symbol.isspace():
             variable_string += symbol
-        else:
-            result.append(variable_string)
-            variable_string = ""
+            if symbol == string[-1]:
+                result.append(variable_string)
+            continue
+        result.append(variable_string)
+        variable_string = ""
     return max(*result, key=len)
 
 
 if __name__ == "__main__":
-    print(get_shortest_word('Python is simple and effective!'))
-    print(get_shortest_word('Any pythonista like namespaces a lot.'))
+    print(get_shortest_word('Python      is simple and \r effective!'))
+    print(get_shortest_word('Any \v pythonista \n like namespaces a lot.'))

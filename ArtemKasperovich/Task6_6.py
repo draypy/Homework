@@ -4,15 +4,18 @@
 # Implement singleton logic inside your custom class using a method to initialize class instance.
 
 class Singleton:
-    __instance = None
+    __instance = {}
 
     def __new__(cls, *args, **kwargs):
-        if cls.__instance is None:
-            cls.__instance = super().__new__(cls)
+        if cls not in cls.__instance:
+            instance = super().__new__(cls)
+            cls.__instance[cls] = instance
         return cls.__instance
 
 
 a = Singleton(123123)
 b = Singleton(99999)
+c = Singleton(1)
+d = Singleton(2)
 
-print(a is b)
+print(id(a), id(b), id(c), id(d), sep='\n')

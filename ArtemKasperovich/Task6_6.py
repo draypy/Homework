@@ -18,4 +18,6 @@ b = Singleton(99999)
 c = Singleton(1)
 d = Singleton(2)
 
-print(id(a), id(b), id(c), id(d), sep='\n')
+
+if __name__ == '__main__':
+    print(id(a), id(b), id(c), id(d), sep='\n')

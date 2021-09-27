@@ -12,7 +12,6 @@
 # * C R Y P T O A B D E F G H I J K L M N Q S U V W X Z
 
 
-
 class Cipher:
     def __init__(self, keyword):
         from string import ascii_uppercase as alphabet
@@ -54,6 +53,7 @@ class Cipher:
         return string_out
 
 
-cipher = Cipher('table')
-print(cipher.encode('Hello world'))
-print(cipher.decode("Fejjn wnqjl"))
+if __name__ == "__main__":
+    cipher = Cipher('table')
+    print(cipher.encode('Hello world'))
+    print(cipher.decode("Fejjn wnqjl"))

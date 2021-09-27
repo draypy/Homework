@@ -13,15 +13,18 @@ class Pagination:
     def __init__(self, text, number):
         self.text = text
         self.number = number
-        self.book = []
         self.text_on_page = ''
-        for letter in text[:len(text) - (len(text) // number)]:
+        self.book = self.create_book()
+
+    def create_book(self):
+        book = []
+        for letter in self.text[:len(self.text) - (len(self.text) // self.number)]:
             self.text_on_page += letter
-            if len(self.text_on_page) == number:
-                self.book.append(self.text_on_page)
+            if len(self.text_on_page) == self.number:
+                book.append(self.text_on_page)
                 self.text_on_page = ''
-        self.book.append(text[len(text) - (len(text) // number) - 1:])
-        print(self.book)
+        book.append(self.text[len(self.text) - (len(self.text) // self.number) - 1:])
+        return book
 
     def page_item_count(self):
         return len(self.text)
@@ -56,18 +59,19 @@ class Pagination:
         return f'Exception: "{string}" is missing on the pages'
 
 
-x = Pagination('Your beautiful text', 5)
-print(x.find_page('beautiful'))
-print(x.find_page('Your'))
-print(x.find_page('e'))
-print(x.find_page('u'))
+if __name__ == '__main__':
+    x = Pagination('Your beautiful text', 5)
+    print(x.find_page('beautiful'))
+    print(x.find_page('Your'))
+    print(x.find_page('e'))
+    print(x.find_page('u'))
 
-print(x.page_item_count())
-print(x.pages_count())
-print(x.count_items_on_page(0))
-print(x.count_items_on_page(3))
-print(x.count_items_on_page(4))
-print()
-print(x.display_page(0))
-print(x.display_page(3))
-print(x.display_page(5))
+    print(x.page_item_count())
+    print(x.pages_count())
+    print(x.count_items_on_page(0))
+    print(x.count_items_on_page(3))
+    print(x.count_items_on_page(4))
+    print()
+    print(x.display_page(0))
+    print(x.display_page(3))
+    print(x.display_page(5))

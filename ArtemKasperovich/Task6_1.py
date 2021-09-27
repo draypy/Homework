@@ -23,24 +23,24 @@ class Counter:
     def __repr__(self):
         return f"{self.__class__.__name__}(start={self.start}, stop={self.stop})"
 
+if __name__ == '__main__':
+    c = Counter(42)
+    c.increment()
+    c.increment()
+    print(c.get())
+    c.increment()
+    c.increment()
+    print(c.get())
 
-c = Counter(42)
-c.increment()
-c.increment()
-print(c.get())
-c.increment()
-c.increment()
-print(c.get())
+    c = Counter()
+    c.increment()
+    c.increment()
+    print(c.get())
+    c.increment()
+    c.increment()
+    print(c.get())
 
-c = Counter()
-c.increment()
-c.increment()
-print(c.get())
-c.increment()
-c.increment()
-print(c.get())
-
-c = Counter(42, 43)
-c.increment()
-print(c.get())
-c.increment()
+    c = Counter(42, 43)
+    c.increment()
+    print(c.get())
+    c.increment()

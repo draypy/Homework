@@ -27,7 +27,7 @@ class HistoryDict:
             memory.pop(memory.index(key))
             memory.append(key)
             return memory
-        if len(memory) == 3:
+        if len(memory) == 10:
             if key in memory:
                 memory.pop(memory.index(key))
                 memory.append(key)
@@ -38,22 +38,17 @@ class HistoryDict:
             memory.append(key)
 
 
-x = HistoryDict({"foo": 42})
-print(x)
-x.set_value("foo", 23)
-print(x.get_history())
-print('======11111')
-x.set_value('111', 1)
-print(x.get_history())
-print('======222222222')
-x.set_value('1', 'value')
-print(x.get_history())
-print('=====33333333=')
-x.set_value('2', 'val11ue')
-print(x.get_history())
-print('=====44444444444=')
-x.set_value('1', 'val1ue')
-print(x.get_history())
-print('=====555555555555=')
-x.set_value('2', 'valu1e')
-print(x.get_history())
+if __name__ == '__main__':
+    x = HistoryDict({"foo": 42})
+    print(x)
+    x.set_value("foo", 23)
+    print(x.get_history())
+    x.set_value('111', 1)
+    x.set_value('1', 'value')
+    print(x.get_history())
+    x.set_value('2', 'val11ue')
+    print(x.get_history())
+    x.set_value('1', 'val1ue')
+    print(x.get_history())
+    x.set_value('2', 'valu1e')
+    print(x.get_history())

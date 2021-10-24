@@ -1,7 +1,7 @@
 .idea
 /modules
-/ArtemKasperovich/venv
-/ArtemKasperovich/.pytest_cache
-/ArtemKasperovich/url
-/ArtemKasperovich/json_data.json
-/ArtemKasperovich/tests.py
+/Artem_Kasperovich/venv
+/Artem_Kasperovich/.pytest_cache
+/Artem_Kasperovich/url
+/Artem_Kasperovich/json_data.json
+/Artem_Kasperovich/tests.py

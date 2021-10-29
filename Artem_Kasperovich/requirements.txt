@@ -3,4 +3,4 @@ DateTime==4.3
 lxml==4.6.3
 requests==2.22.0
 argparse==1.4.0
-
+fpdf==1.7.2

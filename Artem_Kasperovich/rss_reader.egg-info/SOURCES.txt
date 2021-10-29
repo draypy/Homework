@@ -1,0 +1,12 @@
+setup.py
+project/__init__.py
+project/converter.py
+project/parse_news.py
+project/rss_reader.py
+rss_reader.egg-info/PKG-INFO
+rss_reader.egg-info/SOURCES.txt
+rss_reader.egg-info/dependency_links.txt
+rss_reader.egg-info/entry_points.txt
+rss_reader.egg-info/requires.txt
+rss_reader.egg-info/top_level.txt
+test/test_parser.py

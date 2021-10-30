@@ -1,9 +1,10 @@
 """contains functions for converting dictionary to an html or pdf file"""
 import webbrowser
 from fpdf import FPDF
+from .rss_reader import NewsParser
 
 
-def convert_to_html(news: dict, path: str):
+def convert_to_html(news: NewsParser, path: str):
     with open(path, "w", encoding="utf-8") as html_file:
         for item in news:
             html_item = f''' 

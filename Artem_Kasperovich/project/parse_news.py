@@ -1,13 +1,14 @@
+from datetime import datetime
+from typing import List, Optional
 import bs4
 import json
 import logging
 import os
 import re
 import requests
-from datetime import datetime
-from typing import List, Optional
 
-PATH = os.path.join(f'{os.getcwd()}', 'news.json')
+PATH = html_path = os.path.join(os.path.dirname(__file__), "news_cache", "news.json")
+print(PATH)
 
 
 class ParserError(requests.exceptions.ConnectionError, ValueError, AttributeError):
@@ -34,7 +35,7 @@ class NewsParser:
         self.url = url
         self.limit = limit
         self.json_format = json_format
-        self.json_link = os.path.join(f'{os.getcwd()}', 'news.json')
+        self.json_link = PATH
         print(self.json_link)
         self.response = None
         self.items_dict = {}
@@ -137,7 +138,6 @@ class NewsParser:
             return date_obj.strftime("%a, %d %b %Y %H:%M:%S")[:-9]
         except ValueError as er:
             print(er, 'Please entered correct date', sep='\n')
-
 
     def read_json(self) -> Optional[dict]:
         """Read json file

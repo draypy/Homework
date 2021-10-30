@@ -1,6 +1,9 @@
-import logging
 import argparse
+import logging
+import os
+import sys
 
+sys.path.append(os.path.abspath(os.pardir))
 from .parse_news import NewsParser, ParserError
 from .converter import convert_to_html, PDF
 
@@ -50,8 +53,8 @@ def main():
         parser.parse()
         parser.write_json()
         print(parser)
-        html_path = 'news.html'
-        pdf_path = 'news.pdf'
+        html_path = os.path.join(os.path.dirname(__file__), "output_files", "news.html")
+        pdf_path = os.path.join(os.path.dirname(__file__), "output_files", "news.pdf")
         if args.to_pdf:
             pdf = PDF(parser, pdf_path)
             pdf.create_pdf()

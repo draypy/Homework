@@ -12,6 +12,7 @@ setup(
     packages=find_packages(),
     python_requires='>=3.8, <4',
     install_requires=install_require,
+    tests_require=['pytest'],
     entry_points={
         'console_scripts': ['rss_reader=project.rss_reader:main'],
     }

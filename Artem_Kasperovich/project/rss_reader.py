@@ -1,3 +1,6 @@
+"""
+Main module, contains entry point to the rss_reader.
+"""
 import argparse
 import logging
 import os

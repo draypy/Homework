@@ -1,3 +1,6 @@
+"""
+Module containing the core logics.
+"""
 from datetime import datetime
 from typing import List, Optional
 import bs4
@@ -8,10 +11,12 @@ import re
 import requests
 
 PATH = html_path = os.path.join(os.path.dirname(__file__), "news_cache", "news.json")
-print(PATH)
 
 
 class ParserError(requests.exceptions.ConnectionError, ValueError, AttributeError):
+    """
+    A class for catching and reading human readable errors
+    """
     pass
 
 
@@ -36,13 +41,16 @@ class NewsParser:
         self.limit = limit
         self.json_format = json_format
         self.json_link = PATH
-        print(self.json_link)
         self.response = None
         self.items_dict = {}
         self.date = date
         self.logger.info("End constructor")
 
     def parse(self):
+        """
+        Runs the script depending on the command line arguments
+        :return:
+        """
         if self.date is not None:
             self.date = self._arg_date_check()
         if self.url:
@@ -66,8 +74,8 @@ class NewsParser:
             response = requests.get(url)
             if response.status_code == 200:
                 return response
-        except requests.RequestException as er:
-            print(er)
+        except requests.RequestException:
+            print('Please check your entered link')
             raise ParserError
 
     def parsing_rss(self, response: requests.Response) -> dict:
@@ -133,6 +141,11 @@ class NewsParser:
                 return date_obj.strftime("%a, %d %b %Y %H:%M:%S")
 
     def _arg_date_check(self):
+        """
+        Convert self.date to datetime objecte
+        and check correctly input date in command line
+        :return:
+        """
         try:
             date_obj = datetime.strptime(self.date, '%Y%m%d')
             return date_obj.strftime("%a, %d %b %Y %H:%M:%S")[:-9]

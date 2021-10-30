@@ -136,7 +136,6 @@ class NewsParser:
                 date_obj = datetime.strptime(date, key)
             except ValueError:
                 date_obj = None
-                pass
             if isinstance(date_obj, datetime):
                 return date_obj.strftime("%a, %d %b %Y %H:%M:%S")
 

@@ -52,7 +52,7 @@ This package can export CLI utility named `rss_reader`.
 
 1. Clone the repo
    ```sh
-   $ git clone https://github.com/KazZzak70/Homework.git
+   $ git clone git@github.com:draypy/Homework.git
    ```
 2. Go to the `Artem_Kasperovich` folder
    ```sh
